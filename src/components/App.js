@@ -28,7 +28,7 @@ const [data, setData] = useState([{}])
     async function fetchData() {
     try {
         const request = await axios.get(
-        `http://api.tvmaze.com/search/shows?q=${inputValue}`
+        `https://api.tvmaze.com/search/shows?q=${inputValue}`
         );
         let appData = request.data.map(innerData => innerData)
         setData(appData)
