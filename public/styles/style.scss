@@ -1,0 +1,145 @@
+@mixin flex-Direction($displayDir, $direction) {
+  display: $displayDir;
+  flex-direction: $direction;
+  align-items: center;
+}
+@mixin imgValues {
+  width: 19%;
+  height: auto;
+  float: left;
+  margin-right: 1%;
+  border-radius: $border-radius;
+}
+$background-color: #181818;
+$font-family: "Roboto", sans-serif;
+$color: #fff;
+$padding: 1rem;
+$border-radius: 0.2rem;
+
+$justify-content: (
+  "space-evenly": space-evenly,
+  "space-around": space-around,
+  "space-between": space-between,
+);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $background-color;
+  width: 100vw;
+  height: auto;
+  color: $color;
+}
+//nav
+.nav {
+  background-color: black;
+  width: 100%;
+  height: 3rem;
+  box-shadow: 0.7rem 0.7rem 0.7rem #1d1515;
+  @include flex-Direction(flex, row);
+  justify-content: map-get($justify-content, space-evenly);
+  .logTitle-div {
+    width: 70%;
+    height: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+    color: red;
+    text-decoration: none;
+  }
+}
+// button styling
+.btn {
+  padding: 0.5rem;
+  background-color: #e50914;
+  color: $color;
+  border-radius: $border-radius;
+  border: none;
+  &:hover {
+    transition: 0.1s linear;
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+
+//form - Form.js
+
+.input-div {
+  width: 100%;
+  height: 20rem;
+  @include flex-Direction(flex, row);
+  justify-content: center;
+}
+
+.form-section {
+  display: flex;
+  width: 50%;
+  margin-right: 1.5rem;
+  border: none;
+}
+
+.form-input {
+  width: 100%;
+  padding: $padding;
+  border-radius: $border-radius;
+  color: $color;
+  background-color: rgba(124, 122, 122, 0.577);
+  margin-right: 0.8rem;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+//style for data in ApiData.js
+
+.view-div {
+  margin-left: 6.9rem;
+  margin-top: 1rem;
+  width: 80vw;
+  height: auto;
+  display: flex;
+  font-family: $font-family;
+  box-shadow: 0.5rem 0.5rem 21rem 0.5rem #262323;
+  .fig-content {
+    margin-top: 0.6rem;
+  }
+  p {
+    margin-top: 1rem;
+  }
+  img {
+    @include imgValues;
+  }
+}
+
+// contact.js
+
+.contact-form-section {
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border: none;
+  .form-input {
+    width: 50%;
+    margin-top: 1rem;
+  }
+  .desc {
+    width: 50%;
+    height: 20px;
+    padding-bottom: 100px;
+  }
+  .btn {
+    width: 20%;
+    margin: 1rem 7rem;
+  }
+}
+
+.feedback {
+  font-family: $font-family;
+  width: 90vw;
+  margin: 2rem 7rem;
+}
