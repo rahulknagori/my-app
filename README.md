@@ -1,3 +1,3 @@
 # my-app
 
-This website was done using React Js, SCSS and TV maze Api. 
+This website was done using React Js, Router-DOM, SCSS and TV maze Api. 
